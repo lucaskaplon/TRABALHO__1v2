@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>TRABALHO-1v2</title>
+    <meta name="description" content="trabalho Português e Biologia">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        :root {
+            --primary-blue: #0077b6;
+            --secondary-blue: #00b4d8;
+            --accent-blue: #90e0ef;
+            --light-blue: #caf0f8;
+            --dark-blue: #03045e;
+            --text-color: #f8f9fa;
+        }
+
+        body {
+            background-color: var(--light-blue);
+            color: var(--dark-blue);
+            line-height: 1.6;
+        }
+          .header {
+            font-family:  'Century Gothic';
+            font-weight: 700;
+            font-size: 50px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 100%;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+       
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .hero {
+            height: 25rem;
+            background: linear-gradient(135deg, var(--secondary-blue), var(--accent-blue));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            text-align: center;
+            color: var(--dark-blue);
+            position: relative;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-section {
+            padding: 2rem 1rem;
+            background-color: #76d5e8;
+        
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            margin: 1rem 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            height: 25rem;
+            background-image: url('https://img.freepik.com/fotos-gratis/uma-bela-ilha-paraiso-com-praia-e-mar_74190-1023.jpg?semt=ais_hybrid&w=740');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--dark-blue);
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .content-section {
+            padding: 2rem 1rem;
+            background-color: white;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid var(--primary-blue);
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            color: var(--dark-blue);
+        }
+
+        .card-text {
+            color: #495057;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--dark-blue);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background-color: var(--dark-blue);
+            color: var(--text-color);
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+
+        .social-icon {
+            margin: 0 0.75rem;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-icon:hover {
+            color: var(--accent-blue);
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                height: 200px;
+            }
+            
+            .card {
+                padding: 1rem;
+            }
+        }
+
+        /* Video modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            overflow: hidden;
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 800px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            color: white;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .video-thumbnail {
+            position: relative;
+            cursor: pointer;
+            margin-bottom: 1rem;
+        }
+
+        .video-thumbnail:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 6px;
+            height: 6px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%230077b6"><path d="M8 5v14l11-7z"/></svg>');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            transition: all 0.3s ease;
+        }
+
+        .video-thumbnail:hover:after {
+            background-color: white;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <header style="
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between;
+  padding: 3rem; 
+  background-color: #03045e;
+">
+  <h1 style="
+    font-family: Century Gothic; 
+    font-size: 1.8rem;  
+    color: ivory;
+    margin-left: 0.75rem;
+      margin-right: 1rem;
+  ">Documentário</h1>
+
+  <button onclick="window.location.href='index.html'" style="
+    background-color: lightblue; 
+    font-family: Century Gothic; 
+    font-size: 0.8rem; 
+    font-weight: 700; 
+    border: solid lightgray; 
+    border-radius: 1rem;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+  ">Voltar</button>
+</header>
+    <div class="container" >
+        
+        <section class="video-section">
+  <div class="video-container">
+    <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%;">
+  <iframe 
+    src="https://youtu.be/175BfnfLLso" 
+    style="position:absolute; top:0; left:0; width:100%; height:100%;" 
+    frameborder="0" 
+    allowfullscreen>
+  </iframe>
+</div>
+
+  </div>
+</section>
+                
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">Conheça mais sobre nosso grupo</h2>
+            
+            <div class="card">
+                <h3 class="card-title">Estudantes da escola URI Erechim</h3>
+                <p class="card-text">Ensino de qualidade que proporciona todas as oportunidades possíveis aos alunos</p>
+                
+            </div>
+            
+            <div class="card">
+                <h3 class="card-title">Admiradores secretos de Gabriel Gutt</h3>
+                <p class="card-text">Alguém me ajuda eu preciso de terapia</p>
+            
+        </section>
+
+        <footer style=" background-color: #03045e;">
+            <p style="text-align: center; font-family: Century Gothic; font-weight: 700; font-size: 1rem; color:ivory ;"> Produzido por: Bernardo Marini, Lucas Kaplon, Gabriel Dal Castel</p>
+            <p style="text-align: center; font-family: Century Gothic; font-weight: 700; font-size: 1rem; color: ivory">1v2</p>
+        </footer>
+    </div>
+
+    <script>
+        // Video modal functionality
+        const modal = document.getElementById('videoModal');
+        const btn = document.getElementById('openVideoBtn');
+        const span = document.getElementsByClassName('close-modal')[0];
+        
+        btn.onclick = function() {
+            modal.style.display = "block";
+            document.getElementById('modalVideo').src = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1";
+        }
+        
+        span.onclick = function() {
+            modal.style.display = "none";
+            document.getElementById('modalVideo').src = "";
+        }
+        
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+                document.getElementById('modalVideo').src = "";
+            }
+        }
+
+        // Make YouTube video responsive
+        function resizeVideo() {
+            const videoContainer = document.querySelector('.video-container');
+            const containerWidth = videoContainer.offsetWidth;
+            videoContainer.style.height = (containerWidth * 0.5625) + 'px';
+        }
+
+        window.addEventListener('load', resizeVideo);
+        window.addEventListener('resize', resizeVideo);
+    </script>
+</body>
+</html>

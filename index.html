@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> TRABALHO-1v2</title>
+    <meta name="description"  content="Trabalho Português e Biologia">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas Costeiro-marinhos</title>
+    <style>
+        :root {
+            --primary-blue: #1976d2;
+            --dark-blue: #0d47a1;
+            --light-blue: #bbdefb;
+            --accent-blue: #2196f3;
+            --text-light: #f5f5f5;
+            --text-dark: #212121;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-blue);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 2.0rem;
+            font-weight: 1000;
+            font-family:  'Century Gothic';
+        }
+        
+        .hero {
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .hero img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
+        }
+        
+        .hero h1 {
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            padding: 1.5rem 0;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-card img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+        
+        .cta {
+            background: var(--accent-blue);
+            color: var(--text-light);
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+        
+        .cta button {
+            background: white;
+            color: var(--primary-blue);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .cta button:hover {
+            background: var(--dark-blue);
+            color: white;
+        }
+        
+        
+        
+        @media (min-width: 768px) {
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header style=" background-color: #03045e; padding: 2rem;">
+        <div class="container header-content">
+            <div class="logo" style="color: ivory; text-align: center; font-family: Century Gothic; font-size: 1.5rem; font-weight: 700;">Sistemas Costeiro-marinhos</div>
+           
+        </div>
+    </header>
+    
+    <div class="container">
+        <section class="hero">
+            <img src="https://elements-resized.envatousercontent.com/elements-video-cover-images/0068f5f6-c1cd-470f-9856-c62461cf5724/video_preview/video_preview_0000.jpg?w=500&cf_fit=cover&q=85&format=auto&s=f58601b3348a7fcaadbdbbf9bdcbd755d5d603f59a0278597322a1c68f0c262f" alt="Se tiver texto é pq eu sou burro e n sei fazer site"  style=" border: 0.1rem solid gray; "/>
+            <h1 style="font-size: 1.5rem; font-family: Century Gothic; font-weight:900;">Ecossistemas onde a terra encontra o mar</h1>
+            <p></p>
+        </section>
+        
+        <section class="features">
+            <div class="feature-card">
+                <img src="https://recreio.com.br/wp-content/uploads/legacy/2020/01/10/manguezal-1209236.jpeg" alt="Close-up of fingers typing on a smartphone with blue-themed keyboard" />
+                <h3>Manguezais</h3>
+                <p style="font-weight: 600;">Ambientes de transição, água salobra, árvores com raízes altas</p>
+            </div>
+            
+            <div class="feature-card">
+                <img src="https://media.istockphoto.com/id/1346801047/pt/foto/northton-salt-marsh-scotland.jpg?s=612x612&w=0&k=20&c=rdTgYMW8006YJyjoSPlt6Kddy__a6b0Hwd8DWF8h2dU=" alt="Side by side comparison showing our app versus competitors with blue highlights" />
+                <h3>Pântanos Salgados</h3>
+                <p style="font-weight: 600;">Regiões inundadas, vegetacão de pequeno porte, zonas temperadas</p>
+            </div>
+            
+            <div class="feature-card">
+                <img src="https://images.ecycle.com.br/wp-content/uploads/2021/11/10183919/hiroko-yoshii-9y7y26C-l4Y-unsplash-1024x768.jpg.webp" alt="Dashboard showing analytics with blue charts and graphs on mobile screen" />
+                <h3>Recifes de Coral</h3>
+                <p style="font-weight: 600;">Altíssima biodiversidade, indicadores de mudanças climáticas</p>
+            </div>
+            
+            <div class="feature-card">
+                <img src="https://cdn.oantagonista.com/uploads/2024/06/Lagoa-dos-Patos.jpg" alt="Hand holding smartphone with our blue UI reflecting in mirrored surface" />
+                <h3>Lagunas Costeiras</h3>
+                <p style="font-weight: 600;">Corpos de água rasa, separados do mar, em litorais baixos</p>
+            </div>
+        </section>
+        
+        <section class="cta">
+            <h2>Documentário sobre os sistemas Costeiro-marinhos</h2>
+            <button onclick="window.location.href='documentário.html'">Ouvir</button>
+        </section>
+    </div>
+    
+     <footer style=" background-color: #03045e; padding: 2rem;">
+            <p style="text-align: center; font-family: Century Gothic; font-weight: 700; font-size: 1rem; color:ivory ;"> Produzido por: Bernardo Marini, Lucas Kaplon, Gabriel Dal Castel</p>
+            <p style="text-align: center; font-family: Century Gothic; font-weight: 700; font-size: 1rem; color: ivory">1v2</p>
+        </footer>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle functionality
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            alert('Mobile menu would open here in a complete implementation');
+        });
+        
+        // Download button animation
+        const downloadBtn = document.getElementById('downloadBtn');
+        downloadBtn.addEventListener('click', function() {
+            this.textContent = 'Downloading...';
+            setTimeout(() => {
+                this.textContent = 'Download Complete!';
+                setTimeout(() => {
+                    this.textContent = 'Download Now';
+                }, 2000);
+            }, 1500);
+        });
+        
+        // Simple scroll effect for feature cards
+        const featureCards = document.querySelectorAll('.feature-card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        featureCards.forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
